@@ -10,6 +10,11 @@ script:
 - ls /Users/travis/build/jonathankochems/vimproc.vim/lib
 - cp /Users/travis/build/jonathankochems/vimproc.vim/lib/vimproc_mac.so /Users/travis/vimproc_mac.so
 - "/tmp/vim-themis/bin/themis"
+before_deploy:
+      # Set up git user name and tag this commit
+      - git config --local user.name "jonathankochems"
+      - git config --local user.email "jonathan.kochems@gmail.com"
+      - git tag "ver.9.31"
 deploy:
   provider: releases
   api_key:
