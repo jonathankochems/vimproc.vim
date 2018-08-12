@@ -14,7 +14,7 @@ before_deploy:
       # Set up git user name and tag this commit
       - git config --local user.name "jonathankochems"
       - git config --local user.email "jonathan.kochems@gmail.com"
-      - git tag "ver.9.31"
+      - git tag ver.9.32
 deploy:
   provider: releases
   api_key:
@@ -22,3 +22,6 @@ deploy:
   file: /Users/travis/vimproc_mac.so
   on:
     repo: jonathankochems/vimproc.vim
+    branches:
+      only:  
+        - master
