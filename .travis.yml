@@ -1,12 +1,15 @@
 os:
-    - linux
-    - osx
-
+- osx
 sudo: false
-
 before_script:
-    - git clone https://github.com/thinca/vim-themis /tmp/vim-themis
-
+- git clone https://github.com/thinca/vim-themis /tmp/vim-themis
 script:
-    - make
-    - /tmp/vim-themis/bin/themis
+- make
+- "/tmp/vim-themis/bin/themis"
+deploy:
+  provider: releases
+  api_key:
+    secure: nODWmo2moneODt+jeyAueUQpxyozVmJJoEYjUXeOLSuhO8PplZZsqT6N/pCcy+v36Zvb4/1zGLkZUGQIoUKCoci7y91pqv41NzHHOkBi8kEV5FpPVxXyJYEmEYz2J6JJMyDXYIAGQ342Q0CJbrBYBq4d6OrYAe2xHqFDmzTTlw/jSUljQO02GndasL6Qhqlah5DTgJuzSdL/IU7iI1JE0D9AjcPxVi2JjhVULKzTJCgd1to4UzJUtSwDRTxVOzZd5jX68sSPrJWlGO0A4n5QFvXX0POXsmG4KEHaO+lvIFHAw6P2TQu8N+h51lKtp+RDQS2/naUEis9vOZPx63N3ejaM9Qan1AHQgn2Eu3rRHwgOzTzLWhqNlK/UEwSokIe/REMM0U7I23tpcszUGSLVCa8o7LqswgwFQbwDNFULC/7F0PARg1/aqKBGhbN9nzutSacEKwJfqYeYn0ShEZcB23hrXVo6Mvcox7XvrFk44YdNEWiO5TrHlozWnhE57U70XZ3HyPkXCzRWNtSGgqmjKbOBAcEhjWXbdDjFafvXVuPSyDUdHnS5zeThz0Ev2qxDL6q1uazgC2lbx07V2N3fuTTiI72ltKTLvWwbArLCDKAAMC7ouJi/B9Y5P1DZFk/vKDohMW8uaSaqrqYCv0w2QfOLgxlX2u5rk2UYWpvwk9o=
+  file: lib/vimproc_mac.so
+  on:
+    repo: jonathankochems/vimproc.vim
